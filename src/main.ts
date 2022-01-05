@@ -6,6 +6,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(
     new ValidationPipe({
+      // Whitelist removes extra properties automatically provided
+      // with the req.
       whitelist: true,
     }),
   );

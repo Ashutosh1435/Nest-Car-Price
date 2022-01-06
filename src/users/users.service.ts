@@ -16,10 +16,10 @@ export class UsersService {
     const user = this.repo.create({ email, password });
     return this.repo.save(user);
   }
-  findAll() {
-    return this.repo.find();
+  find(email: string) {
+    return this.repo.find({ email });
   }
-  findOne(id: string) {
+  findOne(id: number) {
     return this.repo.findOne(id);
   }
   async update(id: number, attrs: Partial<User>) {

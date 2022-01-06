@@ -5,6 +5,5 @@ export class UserDto {
   id: number;
   @Expose()
   email: string;
-  @Expose()
-  password: string;
+  // password: string;
 }

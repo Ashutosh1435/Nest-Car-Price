@@ -20,6 +20,9 @@ export class UsersService {
     return this.repo.find({ email });
   }
   findOne(id: number) {
+    if (!id) {
+      return null;
+    }
     return this.repo.findOne(id);
   }
   async update(id: number, attrs: Partial<User>) {
